@@ -1,0 +1,15 @@
+{
+    "name": "benplummer/website",
+    "description": "Personal website and blog of Ben Plummer",
+    "authors": [
+        {
+            "name": "Ben Plummer",
+            "email": "hello@benplummer.co.uk",
+            "homepage": "https://benplummer.uk"
+        }
+    ],
+    "require": {
+        "sculpin/sculpin": "^2.1@dev",
+        "dflydev/embedded-composer": "^1.0@dev"
+    }
+}

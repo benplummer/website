@@ -1,0 +1,111 @@
+.l-footer
+{
+    font-size: 1.1em;
+    line-height: 1.2em;
+
+    padding: 5em 0;
+
+    color: $primaryColour;
+    background-color: $grey;
+
+    &__row 
+    {
+        &:after
+        {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    }
+
+    &__column
+    {
+        float: left;
+        padding: 1em;
+        width: 50%;
+        min-height: 1px;
+    }
+
+    &__tagline
+    {
+        text-align: left;
+
+        &_logo
+        {
+            float: left;
+            margin-right: 1.5em;
+        }
+
+        &_text
+        {
+            float: left;
+            font-size: 1.2em;
+            line-height: 1.3em;
+        }
+    }
+
+    &__social
+    {
+        text-align: right;
+
+        &_icon
+        {
+            font-size: 2.5em;
+            text-decoration: none;
+            display: inline-block;
+            margin-left: 0.5em;
+            color: $primaryColour;
+        }
+    }
+
+    &__sculpin
+    {
+        margin-top: 3em;
+        text-align: left;
+
+        a
+        {
+            color: $primaryColour;
+            text-decoration: none;
+        }
+    }
+
+    &__copyright
+    {
+        margin-top: 3em;
+        text-align: right;
+    }
+
+    .l-container
+    {
+        padding: 0;
+    }
+
+    @include max-screen(37em)
+    {
+        padding: 3em 0;
+
+        &__row
+        {
+            padding: 0;
+            text-align: center;
+        }
+
+        &__column
+        {
+            float: left;
+            width: 100%;
+            text-align: center;
+        }
+
+        &__tagline
+        {
+            display: none;
+        }
+
+        &__sculpin
+        {
+            display: none;
+        }
+    }
+}

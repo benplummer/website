@@ -1,0 +1,25 @@
+*
+{
+    box-sizing: border-box;
+}
+
+html, body, #page
+{
+    height: 100%;
+}
+
+body
+{
+    margin: 0;
+    padding: 0;
+
+    background-color: $grey;
+}
+
+@include max-screen(50em)
+{
+    body
+    {
+        padding: 0;
+    }
+}

@@ -1,0 +1,10 @@
+.header--blog
+{
+    background-image: url(../images/blog-header.png);
+
+    @include max-screen(50em)
+    {
+        background-image: none;
+        background-color: $secondaryColour;
+    }
+}

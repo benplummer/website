@@ -1,0 +1,114 @@
+.text
+{
+    font-size: 1.6em;
+    line-height: 1.6em;
+    padding: 6em 0;
+
+    &--center
+    {
+        text-align: center;
+    }
+
+    &--right
+    {
+        text-align: right;
+    }
+
+    &--large
+    {
+        font-size: 1.8em;
+        line-height: 1.4em;
+    }
+
+    &--xlarge
+    {
+        font-size: 2.5em;
+        padding: 4em 0;
+    }
+
+    &--bold
+    {
+        font-weight: 600;
+    }
+
+    &--dark
+    {
+        color: $primaryColour;
+        background-color: $secondaryColour;
+    }
+
+    &--light
+    {
+        color: $black;
+        background-color: $primaryColour;
+    }
+
+    &--white
+    {
+        background-color: $white;
+    }
+
+    &__heading
+    {
+        font-size: 2.5em;
+        margin-bottom: 1em;
+    }
+
+    &__content
+    {
+        padding: 1em 0;
+
+        &--large
+        {
+            padding: 0.5em 0;
+        }
+    }
+
+    &__link
+    {
+        font-weight: 600;
+        color: $black;
+
+        &--dark
+        {
+            color: $secondaryColour;
+        }
+    }
+
+    &__icon
+    {
+        font-size: 3em;
+    }
+
+    &__button
+    {
+        border: none;
+        padding: 0.8em 2em;
+        display: inline-block;
+        margin: 1em 0;
+        font-weight: 600;
+        text-decoration: none;
+        text-transform: uppercase;
+        position: relative;
+        background: $secondaryColour;
+        color: $white;
+        box-shadow: 0 0.3em $tertiaryColour;
+        transition: none;
+        border-radius: 1em;
+
+        &:hover {
+            box-shadow: 0 0.15em $tertiaryColour;
+            top: 0.125em;
+        }
+
+        &:active {
+            box-shadow: 0 0 $tertiaryColour;
+            top: 0.4em;
+        }
+    }
+
+    @include max-screen(50em)
+    {
+        padding: 5em 0;
+    }
+}

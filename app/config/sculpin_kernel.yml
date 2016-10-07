@@ -1,0 +1,5 @@
+sculpin_pagination:
+    max_per_page: 3
+sculpin_content_types:
+    posts:
+        permalink: blog/:year/:month/:filename/

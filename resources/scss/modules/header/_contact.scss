@@ -1,0 +1,11 @@
+.header--contact
+{
+    background-image: url(../images/contact-header.png);
+    background-position: bottom;
+
+    @include max-screen(50em)
+    {
+        background-image: none;
+        background-color: $secondaryColour;
+    }
+}

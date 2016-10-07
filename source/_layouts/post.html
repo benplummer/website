@@ -1,0 +1,61 @@
+{% extends "master" %}
+{% block content_wrapper %}
+    <section class="header  header--blogpost">
+        <div class="l-container">
+            <div class="header__title">
+                <h1>{{ page.title  }}</h1>
+            </div>
+        </div>
+    </section>
+    <section class="blogpost">
+        <div class="l-container">
+            <div class="blogpost__categories">
+                Posted 
+                {{ page.date | date('jS F, Y') }} in 
+                {% for category in page.categories %}
+                    <a href="{{ site.url }}/blog/categories/{{ category | lower }}" class="blogpost__categories__link">
+                        {{ category | replace('-', ' ') | title }}
+                    </a>
+                    {% if not loop.last %},{% endif %}
+                {% endfor %}
+            </div>
+            <div class="blogpost__content">
+                {% block content %}{% endblock %}
+            </div>
+            <div class="blogpost__tags">
+                {% for tag in page.tags %}
+                    <a href="{{ site.url }}/blog/tags/{{ tag | lower }}" class="blogpost__tags__link">
+                        <i class="blogpost__tags__link__icon  fa fa-tag"></i>
+                        {{ tag | replace('-', ' ') }}
+                    </a>
+                {% endfor %}
+            </div>
+            <hr>
+            <div class="blogpost__comments" id="disqus_thread"></div>
+        </div>
+    </section>
+{% endblock %}
+{% block scripts %}
+    {{ parent() }}
+    <script>
+        var disqus_shortname = '{{site.disqus.shortname}}';
+        var disqus_page_identifier = '{{ site.url }}{{ page.url }}';
+
+        var disqus_config = function () {
+            this.page.url = disqus_page_identifier;
+            this.page.identifier = disqus_page_identifier;
+        };
+
+        (function() {
+            var d = document, s = d.createElement('script');
+
+            s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>
+        Please enable JavaScript to view the 
+        <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+    </noscript>
+{% endblock %}

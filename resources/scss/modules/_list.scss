@@ -1,0 +1,102 @@
+$firstBreakpointColumns: 6;
+$secondBreakpointColumns: 3;
+
+.list
+{
+    width: 100%;
+    max-width: $gridMaxWidth;
+    height: 100%;
+    margin: 0 auto;
+    padding: 5.8em 0;
+
+    font-size: 1.4em;
+    line-height: 1em;
+    color: $primaryColour;
+
+    &__row
+    {
+        &:after
+        {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    }
+
+    &__column
+    {
+        float: left;
+        width: 100%;
+        text-align: center;
+
+        @for $i from 1 through $gridColumns {
+            &--#{$i} {
+                width: 100% / $gridColumns * $i;
+            }
+        }
+    }
+
+    &__icon
+    {
+        width: 100%;
+        font-size: 2.5em;
+        text-align: center;
+        margin-bottom: 0.5em;
+    }
+
+    &__content
+    {
+        list-style-type: none;
+        padding: 0;
+
+        li
+        {
+            padding: 0.5em 0;
+        }
+    }
+
+    &:after
+    {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    @include max-screen(65em)
+    {
+        &__column
+        {
+            float: left;
+            width: 100%;
+            text-align: center;
+
+            @for $i from 1 through $firstBreakpointColumns {
+                &--#{$i} {
+                    width: 100% / $firstBreakpointColumns * $i;
+                }
+            }
+
+            &:nth-child(-n+2)
+            {
+                margin-bottom: 4em;
+            }
+        }
+    }
+
+    @include max-screen(37em)
+    {
+        &__column
+        {
+            float: left;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 4em;
+
+            @for $i from 1 through $secondBreakpointColumns {
+                &--#{$i} {
+                    width: 100% / $secondBreakpointColumns * $i;
+                }
+            }
+        }
+    }
+}

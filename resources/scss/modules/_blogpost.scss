@@ -1,0 +1,187 @@
+.blogpost
+{
+    background-color: $primaryColour;
+
+    &__categories
+    {
+        width: 100%;
+        text-align: center;
+        padding: 1em 0 3em;
+
+        font-size: 1.5em;
+        line-height: 1em;
+        color: $black;
+
+        &__link
+        {
+            display: inline-block;
+
+            text-decoration: none;
+
+            color: $secondaryColour;
+
+            &:hover
+            {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__content
+    {
+        font-size: 1.5em;
+        line-height: 1em;
+        padding-bottom: 4em;
+
+        p
+        {
+            padding: 1em 0;
+            line-height: 1.2em;
+        }
+
+        h1
+        {
+            font-size: 3em;
+        }
+
+        h2
+        {
+            font-size: 2.66em;
+        }
+
+        h3
+        {
+            font-size: 2.33em;
+        }
+
+        h4
+        {
+            font-size: 2em;
+        }
+
+        h4
+        {
+            font-size: 1.66em;
+        }
+
+        h5
+        {
+            font-size: 1.33em;
+        }
+
+        h6
+        {
+            font-size: 1em;
+        }
+
+        h1, h2, h3, h4, h5, h6
+        {
+            padding: 1em 0 0.5em;
+        }
+
+        a
+        {
+            display: inline-block;
+            color: $secondaryColour;
+            font-weight: 600;
+
+            &:hover
+            {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__tags
+    {
+        margin: 0 0 2.4em;
+
+        text-align: center;
+
+        &__link
+        {
+            font-size: 1.2em;
+
+            display: inline-block;
+
+            margin-bottom: 0.15em;
+            padding: 0.8em 1.2em;
+
+            transition: background ease 0.3s;
+            text-decoration: none;
+
+            color: $primaryColour;
+            background-color: $secondaryColour;
+            box-shadow: 0 0.08em 0.08em rgba(0, 0, 0, .1);
+            text-shadow: 0.08em 0.08em 0.08em rgba(0, 0, 0, .2);
+
+            &__icon
+            {
+                margin-right: 0.5em;
+            }
+        }
+    }
+
+    hr
+    {
+        border-top: 0.1em solid $secondaryColour;
+        border-bottom: 0.1em solid $secondaryColour;
+    }
+
+    &__comments
+    {
+        padding: 5em 0 10em;
+    }
+
+    @include max-screen(32em)
+    {
+        &__content
+        {
+            p
+            {
+                padding: 1em 0;
+                line-height: 1.2em;
+            }
+
+            h1
+            {
+                font-size: 2.66em;
+            }
+
+            h2
+            {
+                font-size: 2.33em;
+            }
+
+            h3
+            {
+                font-size: 2em;
+            }
+
+            h4
+            {
+                font-size: 1.66em;
+            }
+
+            h4
+            {
+                font-size: 1.5em;
+            }
+
+            h5
+            {
+                font-size: 1.25em;
+            }
+
+            h6
+            {
+                font-size: 1em;
+            }
+
+            h1, h2, h3, h4, h5, h6
+            {
+                padding: 0.8em 0 0.4em;
+            }
+        }
+    }
+}

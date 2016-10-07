@@ -1,0 +1,42 @@
+.l-container
+{
+    width: 100%;
+    max-width: $gridMaxWidth;
+    height: 100%;
+    margin: 0 auto;
+
+    .l-row {
+        .l-column
+        {
+            float: left;
+            padding: 1em;
+            width: 100%;
+            min-height: 1px;
+
+            @for $i from 1 through $gridColumns {
+                &--#{$i} { 
+                    width: 100% / $gridColumns * $i;
+                }
+            }
+        }
+
+        &:after
+        {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    }
+
+    &:after
+    {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    @include max-screen(65em)
+    {
+        padding: 0 3em;
+    }
+}

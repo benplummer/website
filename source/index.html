@@ -1,0 +1,99 @@
+---
+layout: master
+meta:
+    description: "A professional Freelance Web Developer based in Warwickshire specialising in a range of back-end technologies. Available to hire on a freelance/contract basis."
+    keywords:
+        - "web developer"
+        - "freelance web developer"
+        - "contract web developer"
+        - "warwickshire web developer"
+        - "warwickshire freelance web developer"
+        - "warwickshire contract web developer"
+        - "web development"
+        - "freelance web development"
+        - "warwickshire web development"
+        - "warwickshire freelance web development"
+        - "php developer"
+        - "warwickshire php developer"
+        - "warwickshire freelance php developer"
+    twitter:
+        title: "Ben Plummer | Freelance Web Developer based in Warwickshire"
+        description: "A professional Freelance Web Developer based in Warwickshire specialising in a range of back-end technologies. Available to hire on a freelance/contract basis."
+    og:
+        url: ""
+        title: "Ben Plummer | Freelance Web Developer based in Warwickshire"
+        description: "A professional Freelance Web Developer based in Warwickshire specialising in a range of back-end technologies. Available to hire on a freelance/contract basis."
+use:
+    - posts
+---
+{% block content_wrapper %}
+    <section class="headline">
+        <div class="l-container">
+            <div class="headline__text">
+                <h5 class="headline__text--small">I'm Ben.</h5>
+                <h2 class="headline__text--large">A Freelance Web Developer.</h2>
+            </div>
+        </div>
+    </section>
+    <section class="text  text--center  text--light  text--large">
+        <div class="l-container">
+            <div class="text__group">
+                <p class="text__content">
+                    I'm Ben, a professional Freelance Web Developer based in Warwickshire with the ability to work on a freelance or contract basis for anyone based in the UK. 
+                </p>
+                <p class="text__content">
+                    I specialise in a range of back-end technologies, amongst other skills, which you can find out more about <a class="text__link" href="/about">here</a>.
+                </p>
+                <p class="text__content  text__content--large">
+                    Any Questions?
+                </p>
+                <a href="{{ site.url }}/contact" class="text__button">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+    <section class="recentpost">
+        <div class="l-container">
+            {% set post = data.posts | first %}
+
+            <div class="recentpost__date">
+                {{ post.date | date('jS F, Y') }}
+            </div>
+
+            <div class="dash  dash--below"></div>
+
+            <div class="recentpost__title">
+                <a href="{{ site.url }}{{ post.url }}" class="recentpost__title__link">
+                    <h4>{{ post.title }}</h4>
+                </a>
+            </div>
+
+            <div class="recentpost__categories">
+                Posted in 
+                {% for category in post.categories %}
+                    <a href="{{ site.url }}/blog/categories/{{ category | lower }}" class="recentpost__categories__link">
+                        {{ category | replace('-', ' ') | title }}
+                    </a>{% if not loop.last %},{% endif %}
+                {% endfor %}
+            </div>
+
+            <div class="recentpost__preview">
+                {{ post.blocks.content | split('<!-- More -->', 2) | first | raw }}
+            </div>
+
+            <div class="recentpost__readmore">
+                <a href="{{ site.url }}{{ post.url }}" class="recentpost__readmore__link">Continue Reading...</a>
+            </div>
+
+            <div class="dash  dash--above"></div>
+
+            <div class="recentpost__tags">
+                {% for tag in post.tags %}
+                    <a href="{{ site.url }}/blog/tags/{{ tag | lower }}" class="recentpost__tags__link">
+                        <i class="recentpost__tags__link__icon  fa fa-tag"></i>
+                        {{ tag | replace('-', ' ') }}
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

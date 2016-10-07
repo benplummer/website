@@ -1,0 +1,59 @@
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@Ben_Plummer" />
+<meta property="og:site_name" content="Ben Plummer" />
+
+{% if page.post %}
+    {% if page.title %}
+        {% if site.post.title.suffix %}
+            <meta name="twitter:title" content="{{ page.title }} | {{ site.post.title.suffix }}" />
+            <meta property="og:title" content="{{ page.title }} | {{ site.post.title.suffix }}" />
+        {% else %}
+            <meta name="twitter:title" content="{{ page.title }}" />
+            <meta property="og:title" content="{{ page.title }}" />
+        {% endif %}
+    {% else %}
+        <meta name="twitter:title" content="{{ site.title.default }}" />
+        <meta property="og:title" content="{{ site.title.default }}" />
+    {% endif %}
+{% else %}
+    {% if page.title %}
+        {% if site.title.suffix %}
+            <meta name="twitter:title" content="{{ page.title }} | {{ site.title.suffix }}" />
+            <meta property="og:title" content="{{ page.title }} | {{ site.title.suffix }}" />
+        {% else %}
+            <meta name="twitter:title" content="{{ page.title }}" />
+            <meta property="og:title" content="{{ page.title }}" />
+        {% endif %}
+    {% else %}
+        <meta name="twitter:title" content="{{ site.title.default }}" />
+        <meta property="og:title" content="{{ site.title.default }}" />
+    {% endif %}
+{% endif %}
+
+{% if page.meta.twitter.description %}
+    <meta name="twitter:description" content="{{ page.meta.twitter.description }}" />
+{% elseif page.meta.description %}
+    <meta name="twitter:description" content="{{ page.meta.description }}" />
+{% endif %}
+
+{% if page.meta.og.description %}
+    <meta property="og:description" content="{{ page.meta.og.description }}" />
+{% elseif page.meta.description %}
+    <meta property="og:description" content="{{ page.meta.description }}" />
+{% endif %}
+
+{% if page.meta.og.url is defined %}
+    <meta property="og:url" content="{{ site.url }}{{ page.meta.og.url }}" />
+{% endif %}
+
+{% if page.meta.og.type %}
+    <meta property="og:type" content="{{ page.meta.og.type }}" />
+{% endif %}
+
+{% if page.meta.og.image %}
+    <meta property="og:image" content="{{ page.meta.og.image }}" />
+{% endif %}
+
+{% if page.meta.twitter.image %}
+    <meta name="twitter:image" content="{{ page.meta.twitter.image }}" />
+{% endif %}

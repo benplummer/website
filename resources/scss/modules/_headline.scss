@@ -1,0 +1,55 @@
+.headline
+{
+    background-image: url(../images/background.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    color: $white;
+
+    &__text
+    {
+        text-align: center;
+        padding: 25em 0;
+
+        &--small
+        {
+            margin-bottom: 0.8em;
+
+        }
+
+        &--large
+        {
+            margin-bottom: 0.266666667em;
+
+        }
+    }
+
+    @include max-screen(50em)
+    {
+        background-image: none;
+        background-color: $secondaryColour;
+
+        &__text
+        {
+            padding: 17em 0;
+
+            text-align: center;
+        }
+    }
+
+    @include max-screen(37em)
+    {
+        &__text
+        {
+            padding: 17em 0;
+
+            text-align: center;
+
+            &--large
+            {
+                font-size: 4em;
+            }
+        }
+    }
+}

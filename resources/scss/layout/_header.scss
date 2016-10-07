@@ -1,0 +1,36 @@
+.l-header
+{
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    padding: 0;
+
+    @include min-screen(50em)
+    {
+        background-color: $black--transparent;
+
+        &:hover {
+            background-color: $black;
+        }
+    }
+
+    @include max-screen(50em)
+    {
+        padding: 0;
+
+        .l-container
+        {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        &__logo
+        {
+            display: none;
+        }
+    }
+}

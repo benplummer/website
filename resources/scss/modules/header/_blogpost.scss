@@ -1,0 +1,18 @@
+.header--blogpost
+{
+    background-image: url(../images/blog-header.png);
+
+    @include max-screen(50em)
+    {
+        background-image: none;
+        background-color: $secondaryColour;
+    }
+
+    @include max-screen(32em)
+    {
+        .header__title h1
+        {
+            font-size: 4em;
+        }
+    }
+}

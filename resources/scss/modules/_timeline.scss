@@ -1,0 +1,199 @@
+.timeline
+{
+    width: 100%;
+    margin: 0 auto;
+    padding: 5em 0;
+    font-size: 1.6em;
+    background-color: $primaryColour;
+
+    &__wrap
+    {
+        width: 100%;
+        position: relative;
+
+        &:before {
+            content:"";
+            width: 0.2em;
+            height: 100%;
+            background: $secondaryColour;
+            left: 50%;
+            position: absolute;
+        }
+
+        &:after {
+            content: "";
+            clear: both;
+            display: table;
+            width: 100%;
+        }
+    }
+
+    &__heading
+    {
+        text-align: center;
+        color: $secondaryColour;
+        margin-bottom: 4em;
+    }
+
+    &__item {
+
+        width: 45%;
+        background: #fff;
+        border-radius: 0.5em;
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 45%;
+            top: 1.25em;
+            width: 0; 
+            height: 0; 
+            border-top: 0.5em solid transparent;
+            border-bottom: 0.5em solid transparent; 
+            border-left: 0.5em solid $secondaryColour; 
+        }
+
+        &--right {
+            float: right;
+
+            &:before {
+                content: '';
+                right: 45%;
+                left: inherit;
+                border-left: 0;
+                border-right: 0.5em solid $secondaryColour;
+            }
+        }
+
+        &__wrap
+        {
+            position: relative;
+
+            &:after, &:before {
+                content: '';
+                display: block;
+                width: 100%;
+                clear: both;
+            }
+        }
+
+        &__icon {
+            background: $secondaryColour;
+            width: 3em;
+            height: 3em;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            overflow: hidden;
+            margin-left: -1.375em;
+            border-radius: 50%;
+        }
+
+        &__header
+        {
+            width: 100%;
+            background: $secondaryColour;
+            padding-left: 0.75em;
+            border-top-left-radius: 0.5em;
+            border-top-right-radius: 0.5em;
+
+            h5 {
+                font-size: 1.2em;
+                padding: 0.5em 0 0.25em;
+                color: #fff;
+            }
+
+            h6
+            {
+                padding: 0 0 0.6em;
+            }
+        }
+
+        &__content
+        {
+            line-height: 1.4em;
+            padding: 0.5em 0.75em;
+        }
+
+        &__link
+        {
+            color: $black;
+            font-weight: 600;
+        }
+    }
+
+
+    @include max-screen(50em)
+    {
+        &__wrap
+        {
+            width: 100%;
+            position: relative;
+
+            &:before {
+                content:"";
+                width: 0.2em;
+                height: 100%;
+                background: $secondaryColour;
+                left: 0;
+                position: absolute;
+            }
+
+            &:after {
+                content: "";
+                clear: both;
+                display: table;
+                width: 100%;
+            }
+        }
+
+        &__item
+        {
+            width: 90%;
+            float: right;
+
+            &:before
+            {
+                left: 10%;
+                margin-left: -0.5em;
+                border-left: 0;
+                border-right: 0.5em solid $secondaryColour;
+            }
+
+            &__wrap
+            {
+                margin-bottom: 2em;
+            }
+
+            &__icon {
+                left: 0;
+            }
+        }
+    }
+
+    @include max-screen(28em)
+    {
+        &__item
+        {
+            width: 88%;
+
+            &:before
+            {
+                left: 10%;
+                margin-left: 0;
+                border-left: 0;
+                border-right: 0.5em solid $secondaryColour;
+            }
+
+            &__content
+            {
+                padding-left: 0.5em;
+            }
+        }
+
+        .l-container
+        {
+            padding: 0 1em 0 2em;
+        }
+    }
+}

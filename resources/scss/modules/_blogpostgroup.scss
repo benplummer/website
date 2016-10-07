@@ -1,0 +1,225 @@
+.blogpostgroup
+{
+    background-color: $primaryColour;
+
+    .postpreview
+    {
+        padding: 4em 0;
+        border-bottom: 0.1em solid $secondaryColour;
+
+        &__title h4
+        {
+            margin-bottom: 0.2em;
+        }
+
+        &__categories
+        {
+            font-size: 1.2em;
+            line-height: 1em;
+
+            &__link
+            {
+                display: inline-block;
+
+                text-decoration: none;
+
+                color: $secondaryColour;
+
+                &:hover
+                {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        &__content
+        {
+            font-size: 1.5em;
+            line-height: 1em;
+
+            padding: 1em 0;
+
+            p
+            {
+                line-height: 1.2em;
+
+                margin: 1em 0;
+            }
+
+            h1
+            {
+                font-size: 3em;
+            }
+
+            h2
+            {
+                font-size: 2.66em;
+            }
+
+            h3
+            {
+                font-size: 2.33em;
+            }
+
+            h4
+            {
+                font-size: 2em;
+            }
+
+            h4
+            {
+                font-size: 1.66em;
+            }
+
+            h5
+            {
+                font-size: 1.33em;
+            }
+
+            h6
+            {
+                font-size: 1em;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6
+            {
+                margin: 1em 0;
+            }
+
+            a
+            {
+                display: inline-block;
+
+                text-decoration: none;
+
+                color: $secondaryColour;
+
+                &:hover
+                {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        &__readmore
+        {
+            text-align: left;
+
+            &__link
+            {
+                font-size: 1.4em;
+
+                display: inline-block;
+
+                text-decoration: none;
+
+                color: $secondaryColour;
+
+                &:hover
+                {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        &__tags
+        {
+            margin: 2.4em 0;
+
+            text-align: center;
+
+            &__link
+            {
+                font-size: 1.2em;
+
+                display: inline-block;
+
+                margin-bottom: 0.15em;
+                padding: 0.8em 1.2em;
+
+                transition: background ease 0.3s;
+                text-decoration: none;
+
+                color: $primaryColour;
+                background-color: $secondaryColour;
+                box-shadow: 0 0.08em 0.08em rgba(0, 0, 0, 0.1);
+                text-shadow: 0.08em 0.08em 0.08em rgba(0, 0, 0, 0.2);
+
+                &__icon
+                {
+                    margin-right: 0.5em;
+                }
+            }
+        }
+
+        hr
+        {
+            border-top: 0.1em solid $secondaryColour;
+            border-bottom: 0.1em solid $secondaryColour;
+        }
+    }
+
+    &__pages
+    {
+        width: 100%;
+        margin: 2em 0;
+
+        &--previous
+        {
+            float: left;
+
+            width: 50%;
+
+            text-align: left;
+        }
+
+        &--next
+        {
+            float: right;
+
+            width: 50%;
+
+            text-align: right;
+        }
+
+        &__link
+        {
+            font-size: 1.6em;
+
+            text-decoration: none;
+
+            color: $secondaryColour;
+        }
+    }
+
+    @include max-screen(32em)
+    {
+        .postpreview
+        {
+            &__title
+            {
+                text-align: center;
+            }
+
+            &__categories
+            {
+                text-align: center;
+            }
+
+            &__readmore
+            {
+                text-align: center;
+            }
+
+            &__tags
+            {
+                text-align: center;
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{% if page.title %}
+    {% if page.post %}
+        {% if site.post.title.suffix %}
+            {% set title %}
+                {{ page.title }} | {{ site.post.title.suffix }}
+            {% endset %}
+        {% else %}
+            {% set title %}
+                {{ page.title }}
+            {% endset %}
+        {% endif %}
+    {% else %}
+        {% if site.title.suffix %}
+            {% set title %}
+                {{ page.title }} | {{ site.title.suffix }}
+            {% endset %}
+        {% else %}
+            {% set title %}
+                {{ page.title }}
+            {% endset %}
+        {% endif %}
+    {% endif %}
+{% else %}
+    {% set title %}
+        {{ site.title.default }}
+    {% endset %}
+{% endif %}
+<title>{{ title | trim }}</title>

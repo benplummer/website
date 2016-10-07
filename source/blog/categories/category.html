@@ -1,0 +1,49 @@
+---
+layout: master
+title: Blog
+meta:
+    description: "Thoughts and opinions of a Freelance Web Developer, predominantly on Web Development and Technology related topics, based on day to day experiences."
+    twitter:
+        title: "Blog | Ben Plummer | Freelance Web Developer based in Warwickshire"
+        description: "Thoughts and opinions of a Freelance Web Developer, predominantly on Web Development and Technology related topics, based on day to day experiences."
+    og:
+        title: "Blog | Ben Plummer | Freelance Web Developer based in Warwickshire"
+        description: "Thoughts and opinions of a Freelance Web Developer, predominantly on Web Development and Technology related topics, based on day to day experiences."
+generator: [posts_category_index, pagination]
+pagination:
+    provider: page.category_posts
+---
+{% block content_wrapper %}
+    <section class="header  header--blog">
+        <div class="l-container">
+            <div class="header__title">
+                <h1>Blog</h1>
+            </div>
+        </div>
+    </section>
+    <section class="blogpostgroup">
+        <div class="l-container">
+            {% for post in page.pagination.items %}
+                {% include 'postpreview.html' with {post: post} %}
+            {% endfor %}
+            <div class="blogpostgroup__pages  clearfix">
+                {% if page.pagination.previous_page %}
+                    <div class="blogpostgroup__pages--previous">
+                        <a href="{{ site.url }}{{ page.pagination.previous_page.url }}" class="blogpostgroup__pages__link">
+                            <i class="fa fa-angle-double-left"></i>
+                            Newer Posts
+                        </a>
+                    </div>
+                {% endif %}
+                {% if page.pagination.next_page %}
+                    <div class="blogpostgroup__pages--next">
+                        <a href="{{ site.url }}{{ page.pagination.next_page.url }}" class="blogpostgroup__pages__link">
+                            Older Posts
+                            <i class="fa fa-angle-double-right"></i>
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

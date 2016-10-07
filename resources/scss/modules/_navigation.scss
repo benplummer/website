@@ -1,0 +1,145 @@
+.nav
+{
+    &__group
+    {
+        width: 50%;
+        float: left;
+    }
+
+    &__links
+    {
+        text-align: right;
+    }
+
+    &__item
+    {
+        font-size: 1.4em;
+        line-height: 4.143em;
+
+        display: inline-block;
+
+        height: 4.143em;
+
+        padding: 0 0 0 1.8em;
+
+        text-decoration: none;
+
+        color: $white;
+
+        &--first {
+            padding: 0;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+    }
+
+    &_hamburger
+    {
+        position: absolute;
+        top: -999em;
+        left: -999em;
+    }
+
+    &_hamburger_icon
+    {
+        display: none;
+
+        cursor: pointer;
+        user-select: none;
+    }
+
+    @include min-screen(50em)
+    {
+        &__item
+        {
+            opacity: 0.7;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
+    @include max-screen(50em)
+    {
+        &__item
+        {
+            display: none;
+
+            width: 100%;
+            height: 100%;
+        }
+
+        &_hamburger:checked ~ .nav_hamburger_icon
+        {
+            background-color: $black;
+            color: white;
+        }
+
+        &_hamburger:checked ~ .nav__group
+        {
+            width: 100%;
+
+            .nav__item
+            {
+                font-size: 2em;
+                line-height: 2em;
+                display: block;
+
+                width: 100%;
+                height: 2em;
+                padding: 0;
+
+                text-align: center;
+                text-decoration: none;
+
+                color: $white;
+                border-width: .1em;
+                border-color: $grey;
+                border-top-style: solid;
+
+                background-color: $black;
+
+                &:hover {
+                    background-color: $grey;
+                }
+
+                &--first {
+                    display: none;
+                }
+            }
+        }
+
+        &_hamburger_icon
+        {
+            font-size: 3em;
+
+            position: relative;
+
+            display: block;
+
+            width: 100%;
+            height: 1.5em;
+            margin: 0;
+
+            color: $white;
+
+            background-color: $black--transparent;
+
+            &:hover {
+                background-color: $black;
+            }
+
+            i
+            {
+                position: absolute;
+                top: 0;
+                right: 0;
+
+                padding: .25em;
+            }
+        }
+    }
+}
