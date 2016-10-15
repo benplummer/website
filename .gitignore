@@ -1,7 +1,7 @@
 .sculpin
 output_dev
 output_prod
-vendor
+/vendor
 resources/node_modules
 resources/.sass-cache
 **/.DS_Store
